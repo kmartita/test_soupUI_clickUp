@@ -1,7 +1,7 @@
 # Test API SoapUI Project
 
 This repository contains a REST project constructed using the `SoapUI` tool. The `TestSuite` is designed by TestCases: Create Pre-requests, Operate by Space Tags, Delete Pre-requests. 
-And the same ensuring efficient and comprehensive testing of all API endpoints as specified in the ClickUP API requirements to [GetSpaceTags] (https://clickup.com/api/clickupreference/operation/GetSpaceTags/).
+And the same ensuring efficient and comprehensive testing of all API endpoints as specified in the ClickUP API requirements to [GetSpaceTags](https://clickup.com/api/clickupreference/operation/GetSpaceTags/).
 
 ## Table of Contents
 1. Setup local machine<br/>
