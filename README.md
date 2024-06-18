@@ -25,5 +25,5 @@ This guide will walk you through the process of setting up JSON schema validatio
 4. Run the test. Execute the POST method test in SoapUI to trigger the JSON schema validation through your Groovy script. Check the test results to ensure that the JSON response schema is validated successfully.
 
 ## 3. Run the Collection
-* Import project
+* Import project.
 * Use the SoapUI TestSuite Runner to execute the project, ensuring the pre- & post- scripts are executed to maintain data integrity.
