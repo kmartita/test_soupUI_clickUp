@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="05f25cdb-e79a-4772-bb32-2d23512fe2ec" activeEnvironment="Default" name="ClickUp-SpaceTags" resourceRoot="${projectDir}" soapui-version="5.7.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="TestSuite"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="true"/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:RestService" id="23690333-4153-4b5f-a0b4-6df9b057851d" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://api.clickup.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://api.clickup.com</con:endpoint></con:endpoints><con:resource name="space(s)" path="/api/v2/team/${#Project#team_id}/space" id="7c4f5ca4-ad46-4806-9e65-6cbc49175363"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Create Space" id="7149f575-1392-4b49-936c-02ea4e43ef86" method="POST"><con:settings><con:setting id="RecordResponseRepresentations">true</con:setting></con:settings><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:spac="https://api.clickup.com/team/9015703641/space">spac:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>400</con:status><con:params/><con:element xmlns:spac="https://api.clickup.com/team/9015703641/space">spac:Fault</con:element></con:representation><con:request name="POST_Space" id="01f697ce-b247-4b9d-9f99-60af8284a6a7" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request>{
+  "name": "New Space Name",
+  "multiple_assignees": true,
+  "features": {
+    "due_dates": {
+      "enabled": true,
+      "start_date": false,
+      "remap_due_dates": true,
+      "remap_closed_due_date": false
+    },
+    "time_tracking": {
+      "enabled": false
+    },
+    "tags": {
+      "enabled": true
+    },
+    "time_estimates": {
+      "enabled": true
+    },
+    "checklists": {
+      "enabled": true
+    },
+    "custom_fields": {
+      "enabled": true
+    },
+    "remap_dependencies": {
+      "enabled": true
+    },
+    "dependency_warning": {
+      "enabled": true
+    },
+    "portfolios": {
+      "enabled": true
+    }
+  }
+}</con:request><con:originalUri>https://api.clickup.com/team/9015703641/space</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="space by id" path="/api/v2/space/${#Project#space_id}" id="13026a1e-e80c-4fbc-8a1a-cbb026a76db6"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Delete Space" id="6b74df96-7cfb-4110-a5c7-d1e655857433" method="DELETE"><con:settings/><con:parameters/><con:request name="DELETE_Space" id="c84f35f0-b226-4983-8f6c-4048ddd7931a" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="tag(s)" path="/api/v2/space/${#Project#space_id}/tag" id="b7e6d687-567f-494b-99b2-b80cda738663"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Get Space Tags" id="05def3cc-3008-4fd0-a2dd-c851d5ce392c" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>400</con:status><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/></con:representation><con:request name="GET_SpaceTags" id="f22f91be-b146-4a51-923f-1cdc52a053c7" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/space//tag</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:request></con:method><con:method name="Create Space Tag" id="7868b23a-3af6-4d80-8342-59398c920682" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="POST_SpaceTag" id="18e85123-120d-4c25-9f8d-7a6d86fd3534" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request>{
+  "tag": {
+    "name": "tag name",
+    "tag_fg": "#000000",
+    "tag_bg": "#000000"
+  }
+}</con:request><con:originalUri>https://api.clickup.com/api/v2/space/90152582039/tag</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method></con:resource><con:resource name="tag by name" path="/api/v2/space/${#Project#space_id}/tag/${#Project#tag_name}" id="ba2eae95-79f5-4ad3-b442-345906b3c504"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value>${#Project#token}</con:value><con:style>HEADER</con:style><con:default>${#Project#token}</con:default><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Edit Space Tag" id="54db55ef-b6b8-4f2a-be28-a684bcf09d72" method="PUT"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="PUT_SpaceTag" id="51ca667a-c0c8-481c-9a28-a7c3dd697856" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request>{
+  "tag": {
+    "name": "updated tag"
+  }
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:request></con:method><con:method name="Delete Space Tag" id="b10168bd-8890-4f14-a021-7da89285fd12" method="DELETE"><con:settings/><con:parameters/><con:request name="DELETE_SpaceTag" id="82ff9fe2-4544-459f-bc40-59e1533ba3c2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="folder(s)" path="/api/v2/space/${#Project#space_id}/folder" id="daf9244c-5210-46c7-ab5e-7a0d583b5fee"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Create Folder" id="1613eed2-e3c0-488e-8b02-acbd676036bd" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:fol="https://api.clickup.com/api/v2/space/90152581818/folder">fol:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="POST_Folder" id="c2f5ae16-a54d-4948-b340-080dac68194b" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request>{
+"name": "New Folder Name"
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="folder by id" path="/api/v2/folder/${#Project#folder_id}" id="5ba1ac83-ba2b-4ab8-a8da-6799b69c3ec4"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Delete Folder" id="1aa8652d-41b1-4168-ba25-57b587991dbd" method="DELETE"><con:settings/><con:parameters/><con:request name="DELETE_Folder" id="dc0f8fc1-621d-41c3-afb1-d7fcbfb1cfd8" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="list(s)" path="/api/v2/folder/${#Project#folder_id}/list" id="01e82a71-c55f-42d8-9ada-b798c4cb864f"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Create List" id="30677025-3049-4339-99bc-85a010004ba6" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:list="https://api.clickup.com/api/v2/folder/90153678032/list">list:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="POST_List" id="1fceace4-5b02-48f4-82f9-93c535a32b12" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request>{
+"name": "New List Name"
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="list by id" path="/api/v2/list/${#Project#list_id}" id="b98a5f1a-32af-4669-b3e5-2d13d0b15439"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Delete List" id="524d492f-ccde-4252-9130-7580b0461991" method="DELETE"><con:settings/><con:parameters/><con:request name="DELETE_List" id="cb20748a-4c1d-4097-b56d-5a0409c3828b" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="task(s)" path="/api/v2/list/${#Project#list_id}/task" id="ecb20296-16b1-4244-9763-3dc0559cc9cd"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Create Task" id="934b621e-f30e-4de1-8a5c-2ca2816b0b1b" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:task="https://api.clickup.com/api/v2/list/901505699213/task">task:Response</con:element></con:representation><con:request name="POST_Task" id="69523437-487c-43a8-bca6-24ce5a7a1a61" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request>{
+"name": "New Task Name"
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="task by id" path="/api/v2/task/${#Project#task_id}" id="f9215ef0-2c17-471f-99eb-9d1c6b5eebed"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>Content-type</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Delete Task" id="6b127a2e-d96a-4c55-a689-7a2bba3172bd" method="DELETE"><con:settings/><con:parameters/><con:request name="DELETE_Task" id="569a0c2a-402b-40c2-85a4-cb00f5e27a01" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="Authorization" value="${#Project#token}"/>
+  <con:entry key="Content-type" value="application/json"/>
+</con:parameters><con:parameterOrder><con:entry>Authorization</con:entry><con:entry>Content-type</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="tag for task" path="/api/v2/task/${#Project#task_id}/tag/${#Project#tag_name}" id="b9268760-dd3f-4505-a616-07eb35a85cb2"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>Content-Type</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Add Space Tag to Task" id="84be4a77-30a8-4472-b6be-24e10ba93eae" method="POST"><con:settings/><con:parameters/><con:request name="POST_SpaceTagToTask" id="1f255271-cb27-4a82-9029-319fd3f480ba" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="Authorization" value="${#Project#token}"/>
+  <con:entry key="Content-Type" value="application/json"/>
+</con:parameters><con:parameterOrder><con:entry>Authorization</con:entry><con:entry>Content-Type</con:entry></con:parameterOrder></con:request></con:method><con:method name="Delete Space Tag from Task" id="59214616-eac2-4496-a406-fba292d6520e" method="DELETE"><con:settings/><con:parameters/><con:request name="DELETE_SpaceTagFromTask" id="8ec0ee9e-880b-4b8a-b0ec-20333a16f379" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="Authorization" value="${#Project#token}"/>
+  <con:entry key="Content-Type" value="application/json"/>
+</con:parameters></con:request></con:method></con:resource></con:interface><con:testSuite id="92f32e3a-3ecd-4a60-9967-b4511f8b924e" name="TestSuite"><con:description>TestSuite generated for REST Service [https://api.clickup.com]</con:description><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="3fe1757a-8904-44db-852d-d846ce536291" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create Pre-requests TestCase" searchProperties="true"><con:description>TestCase generated for REST Resource [Spaces] located at [/api/v2/team/{team_id}/space]</con:description><con:settings/><con:testStep type="groovy" name="Save 'spaceName' in suite properties" id="f2092d7a-4bf9-4c3e-8a27-07c8f327bfd4"><con:settings/><con:config><script>import java.util.Random
+
+String generateRandomString(int length) {
+    def allowedChars = ('a'..'z').toList()
+    def random = new Random()
+    return (1..length).collect { allowedChars[random.nextInt(allowedChars.size())] }.join()
+}
+
+String randomString = generateRandomString(5)
+println "Generated Random String: ${randomString}"
+testRunner.testCase.testSuite.setPropertyValue("spaceName", randomString)
+</script></con:config></con:testStep><con:testStep type="restrequest" name="POST_Space" id="fae7a1ed-54e6-40ff-b1b3-e6b5820f7a09"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/team/${#Project#team_id}/space" methodName="Create Space" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="POST_Space" id="01f697ce-b247-4b9d-9f99-60af8284a6a7" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request>{
+  "name": "Space ${#TestSuite#spaceName}",
+  "multiple_assignees": true,
+  "features": {
+    "due_dates": {
+      "enabled": true,
+      "start_date": false,
+      "remap_due_dates": true,
+      "remap_closed_due_date": false
+    },
+    "time_tracking": {
+      "enabled": false
+    },
+    "tags": {
+      "enabled": true
+    },
+    "time_estimates": {
+      "enabled": true
+    },
+    "checklists": {
+      "enabled": true
+    },
+    "custom_fields": {
+      "enabled": true
+    },
+    "remap_dependencies": {
+      "enabled": true
+    },
+    "dependency_warning": {
+      "enabled": true
+    },
+    "portfolios": {
+      "enabled": true
+    }
+  }
+}</con:request><con:originalUri>https://api.clickup.com/team/9015703641/space</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="1e719fc6-9cfd-4141-91ef-1a0d22104bdf" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="a17cde1b-8cb1-4fb7-a9fd-2185e037b3c3" name="Validate Schema Response"><con:configuration><scriptText>import com.networknt.schema.JsonSchemaFactory
+import com.networknt.schema.SpecVersion
+import com.networknt.schema.ValidationMessage
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.databind.JsonNode
+import groovy.json.JsonSlurper
+import java.io.ByteArrayInputStream
+import java.nio.charset.StandardCharsets
+
+// JSON Response from the previous request
+def jsonResponseContent = context.expand('${POST_Space#Response}')
+def jsonSlurper = new JsonSlurper()
+def parsedJson = jsonSlurper.parseText(jsonResponseContent)
+
+def mapper = new ObjectMapper()
+JsonNode jsonNode = mapper.valueToTree(parsedJson)
+
+def schemaText = '''
+{
+  "\$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "id": {"type": "string"},
+    "name": {"type": "string"},
+    "private": {"type": "boolean"},
+    "statuses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "string"},
+          "status": {"type": "string"},
+          "type": {"type": "string"},
+          "orderindex": {"type": "integer"},
+          "color": {"type": "string"}
+        },
+        "required": ["id", "status", "type", "orderindex", "color"]
+      }
+    },
+    "multiple_assignees": {"type": "boolean"},
+    "features": {
+      "type": "object",
+      "properties": {
+        "due_dates": {
+          "type": "object",
+          "properties": {
+            "enabled": {"type": "boolean"},
+            "start_date": {"type": "boolean"},
+            "remap_due_dates": {"type": "boolean"},
+            "remap_closed_due_date": {"type": "boolean"}
+          }
+        },
+        "sprints": {"type": "object", "properties": {"enabled": {"type": "boolean"}}},
+        "points": {"type": "object", "properties": {"enabled": {"type": "boolean"}}},
+        "tags": {"type": "object", "properties": {"enabled": {"type": "boolean"}}},
+        "time_estimates": {"type": "object", "properties": {"enabled": {"type": "boolean"}}},
+        "checklists": {"type": "object", "properties": {"enabled": {"type": "boolean"}}},
+        "zoom": {"type": "object", "properties": {"enabled": {"type": "boolean"}}},
+        "milestones": {"type": "object", "properties": {"enabled": {"type": "boolean"}}},
+        "custom_fields": {"type": "object", "properties": {"enabled": {"type": "boolean"}}},
+        "remap_dependencies": {"type": "object", "properties": {"enabled": {"type": "boolean"}}},
+        "dependency_warning": {"type": "object", "properties": {"enabled": {"type": "boolean"}}},
+        "portfolios": {"type": "object", "properties": {"enabled": {"type": "boolean"}}},
+        "emails": {"type": "object", "properties": {"enabled": {"type": "boolean"}}}
+      },
+      "required": ["due_dates", "sprints", "points", "tags", "time_estimates", "checklists", "zoom", "milestones", "custom_fields", "remap_dependencies", "dependency_warning", "portfolios", "emails"]
+    },
+    "archived": {"type": "boolean"}
+  },
+  "required": ["id", "name", "private", "statuses", "multiple_assignees", "features", "archived"]
+}
+'''
+
+def schemaInputStream = new ByteArrayInputStream(schemaText.getBytes(StandardCharsets.UTF_8))
+def schemaFactory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V7)
+def schema = schemaFactory.getSchema(schemaInputStream)
+
+// Validate JSON Response against schema
+Set&lt;ValidationMessage> validationMessages = schema.validate(jsonNode)
+if (!validationMessages.isEmpty()) {
+    validationMessages.each { message ->
+        log.error("Validation Error: ${message.message}")
+    }
+    assert false : "JSON Schema Validation Failed"
+} else {
+    log.info("JSON Schema Validation Passed")
+}
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="Transfer 'space_id'" id="38e334cc-87a1-49ad-b8ea-7328259e680e"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>id</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>POST_Space</con:sourceStep><con:sourcePath>$['id']</con:sourcePath><con:targetType>space_id</con:targetType><con:targetStep>#Project#</con:targetStep><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="restrequest" name="POST_Folder" id="59445543-77b5-4c69-b81e-916c754ae2b1"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/space/${#Project#space_id}/folder" methodName="Create Folder" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="POST_Folder" id="c2f5ae16-a54d-4948-b340-080dac68194b" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request>{
+"name": "New Folder Name"
+}</con:request><con:originalUri>https://api.clickup.com/api/v2/space/90152581828/folder</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="8f0ec937-f4a1-42f5-8c5e-2d10abd56ed4" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="6a14adab-172d-466d-bf90-2bde7d7462cd" name="Validate Schema Response"><con:configuration><scriptText>import com.networknt.schema.JsonSchemaFactory
+import com.networknt.schema.SpecVersion
+import com.networknt.schema.ValidationMessage
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.databind.JsonNode
+import groovy.json.JsonSlurper
+import java.io.ByteArrayInputStream
+import java.nio.charset.StandardCharsets
+
+// JSON Response from the previous request
+def jsonResponseContent = context.expand('${POST_Folder#Response}')
+def jsonSlurper = new JsonSlurper()
+def parsedJson = jsonSlurper.parseText(jsonResponseContent)
+
+def mapper = new ObjectMapper()
+JsonNode jsonNode = mapper.valueToTree(parsedJson)
+
+def schemaText = '''
+{
+  "\$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "id": {"type": "string"},
+    "name": {"type": "string"},
+    "orderindex": {"type": "integer"},
+    "override_statuses": {"type": "boolean"},
+    "hidden": {"type": "boolean"},
+    "space": {
+      "type": "object",
+      "properties": {
+        "id": {"type": "string"},
+        "name": {"type": "string"},
+        "access": {"type": "boolean"}
+      },
+      "required": ["id", "name", "access"]
+    },
+    "task_count": {"type": "string"}
+  },
+  "required": ["id", "name", "orderindex", "override_statuses", "hidden", "space", "task_count"]
+}
+'''
+
+def schemaInputStream = new ByteArrayInputStream(schemaText.getBytes(StandardCharsets.UTF_8))
+def schemaFactory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V7)
+def schema = schemaFactory.getSchema(schemaInputStream)
+
+// Validate JSON Response against schema
+Set&lt;ValidationMessage> validationMessages = schema.validate(jsonNode)
+if (!validationMessages.isEmpty()) {
+    validationMessages.each { message ->
+        log.error("Validation Error: ${message.message}")
+    }
+    assert false : "JSON Schema Validation Failed"
+} else {
+    log.info("JSON Schema Validation Passed")
+}
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Save 'folder_id' in project properties" id="a4101b78-a809-4555-a4f2-41dfc7648f9d"><con:settings/><con:config><script>def response = context.expand('${POST_Folder#Response}').toString()
+def jsonResponse = new groovy.json.JsonSlurper().parseText(response)
+
+context.testCase.testSuite.project.setPropertyValue("folder_id", jsonResponse.id)
+</script></con:config></con:testStep><con:testStep type="restrequest" name="POST_List" id="f7eed003-d8f1-4e75-9633-d3fd5a95baa2"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/folder/${#Project#folder_id}/list" methodName="Create List" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="POST_List" id="1fceace4-5b02-48f4-82f9-93c535a32b12" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request>{
+"name": "New List Name"
+}</con:request><con:originalUri>https://api.clickup.com/api/v2/folder/90153678032/list</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="b4706ea6-b7ea-4faa-8d0f-4e61d8fa6a2e" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="4413cf29-06b9-4943-a084-c9a7239d1304" name="Validate Schema Response"><con:configuration><scriptText>import com.networknt.schema.JsonSchemaFactory
+import com.networknt.schema.SpecVersion
+import com.networknt.schema.ValidationMessage
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.databind.JsonNode
+import groovy.json.JsonSlurper
+import java.io.ByteArrayInputStream
+import java.nio.charset.StandardCharsets
+
+// JSON Response from the previous request
+def jsonResponseContent = context.expand('${POST_List#Response}')
+def jsonSlurper = new JsonSlurper()
+def parsedJson = jsonSlurper.parseText(jsonResponseContent)
+
+def mapper = new ObjectMapper()
+JsonNode jsonNode = mapper.valueToTree(parsedJson)
+
+def schemaText = '''
+{
+    "type": "object",
+    "properties": {
+        "id": {"type": "string"},
+        "name": {"type": "string"},
+        "deleted": {"type": "boolean"},
+        "orderindex": {"type": "integer"},
+        "content": {"type": "string"},
+        "priority": {"type": ["null", "object"]},
+        "assignee": {"type": ["null", "object"]},
+        "due_date": {"type": ["null", "string"]},
+        "start_date": {"type": ["null", "string"]},
+        "folder": {
+            "type": "object",
+            "properties": {
+                "id": {"type": "string"},
+                "name": {"type": "string"},
+                "hidden": {"type": "boolean"},
+                "access": {"type": "boolean"}
+            },
+            "required": ["id", "name", "hidden", "access"]
+        },
+        "space": {
+            "type": "object",
+            "properties": {
+                "id": {"type": "string"},
+                "name": {"type": "string"},
+                "access": {"type": "boolean"}
+            },
+            "required": ["id", "name", "access"]
+        },
+        "inbound_address": {"type": "string"},
+        "archived": {"type": "boolean"},
+        "override_statuses": {"type": "boolean"},
+        "statuses": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {"type": "string"},
+                    "status": {"type": "string"},
+                    "orderindex": {"type": "integer"},
+                    "color": {"type": "string"},
+                    "type": {"type": "string"},
+                    "status_group": {"type": "string"}
+                },
+                "required": ["id", "status", "orderindex", "color", "type", "status_group"]
+            }
+        },
+        "permission_level": {"type": "string"}
+    },
+    "required": ["id", "name", "deleted", "orderindex", "content", "folder", "space", "inbound_address", "archived", "override_statuses", "statuses", "permission_level"]
+}
+'''
+
+def schemaInputStream = new ByteArrayInputStream(schemaText.getBytes(StandardCharsets.UTF_8))
+def schemaFactory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V7)
+def schema = schemaFactory.getSchema(schemaInputStream)
+
+// Validate JSON Response against schema
+Set&lt;ValidationMessage> validationMessages = schema.validate(jsonNode)
+if (!validationMessages.isEmpty()) {
+    validationMessages.each { message ->
+        log.error("Validation Error: ${message.message}")
+    }
+    assert false : "JSON Schema Validation Failed"
+} else {
+    log.info("JSON Schema Validation Passed")
+}
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="Transfer 'list_id'" id="94433fc0-f33f-4976-8f2b-750838fe5557"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>id</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>POST_List</con:sourceStep><con:sourcePath>$['id']</con:sourcePath><con:targetType>list_id</con:targetType><con:targetStep>#Project#</con:targetStep><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="restrequest" name="POST_Task" id="583c8456-7af2-46b1-8531-21a59275160b"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/list/${#Project#list_id}/task" methodName="Create Task" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="POST_Task" id="69523437-487c-43a8-bca6-24ce5a7a1a61" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request>{
+"name": "New Task Name"
+}</con:request><con:originalUri>https://api.clickup.com/api/v2/list/901505699213/task</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="cd50e1e6-c7f6-4cda-9e0e-c54eb0ca79da" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="b01d6039-ec9d-4d0d-8164-b9bbc60f9ebc" name="Validate Schema Response"><con:configuration><scriptText>import com.networknt.schema.JsonSchemaFactory
+import com.networknt.schema.SpecVersion
+import com.networknt.schema.ValidationMessage
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.databind.JsonNode
+import groovy.json.JsonSlurper
+import java.io.ByteArrayInputStream
+import java.nio.charset.StandardCharsets
+
+// JSON Response from the previous request
+def jsonResponseContent = context.expand('${POST_Task#Response}')
+def jsonSlurper = new JsonSlurper()
+def parsedJson = jsonSlurper.parseText(jsonResponseContent)
+
+def mapper = new ObjectMapper()
+JsonNode jsonNode = mapper.valueToTree(parsedJson)
+
+def schemaText = '''
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "id": {"type": "string"},
+        "custom_id": {"type": ["null", "string"]},
+        "custom_item_id": {"type": "integer"},
+        "name": {"type": "string"},
+        "text_content": {"type": "string"},
+        "description": {"type": "string"},
+        "status": {
+            "type": "object",
+            "properties": {
+                "id": {"type": "string"},
+                "status": {"type": "string"},
+                "color": {"type": "string"},
+                "orderindex": {"type": "integer"},
+                "type": {"type": "string"}
+            },
+            "required": ["id", "status", "color", "orderindex", "type"]
+        },
+        "orderindex": {"type": "string"},
+        "date_created": {"type": "string"},
+        "date_updated": {"type": "string"},
+        "date_closed": {"type": ["null", "string"]},
+        "date_done": {"type": ["null", "string"]},
+        "archived": {"type": "boolean"},
+        "creator": {
+            "type": "object",
+            "properties": {
+                "id": {"type": "integer"},
+                "username": {"type": "string"},
+                "color": {"type": "string"},
+                "email": {"type": "string"},
+                "profilePicture": {"type": ["null", "string"]}
+            },
+            "required": ["id", "username", "email"]
+        },
+        "assignees": {"type": "array"},
+        "group_assignees": {"type": "array"},
+        "watchers": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {"type": "integer"},
+                    "username": {"type": "string"},
+                    "color": {"type": "string"},
+                    "initials": {"type": "string"},
+                    "email": {"type": "string"},
+                    "profilePicture": {"type": ["null", "string"]}
+                },
+                "required": ["id", "username", "email"]
+            }
+        },
+        "checklists": {"type": "array"},
+        "tags": {"type": "array"},
+        "parent": {"type": ["null", "string"]},
+        "priority": {"type": ["null", "string"]},
+        "due_date": {"type": ["null", "string"]},
+        "start_date": {"type": ["null", "string"]},
+        "points": {"type": ["null", "string"]},
+        "time_estimate": {"type": ["null", "string"]},
+        "time_spent": {"type": "integer"},
+        "custom_fields": {"type": "array"},
+        "dependencies": {"type": "array"},
+        "linked_tasks": {"type": "array"},
+        "locations": {"type": "array"},
+        "team_id": {"type": "string"},
+        "url": {"type": "string"},
+        "sharing": {
+            "type": "object",
+            "properties": {
+                "public": {"type": "boolean"},
+                "public_share_expires_on": {"type": ["null", "string"]},
+                "public_fields": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                },
+                "token": {"type": ["null", "string"]},
+                "seo_optimized": {"type": "boolean"}
+            },
+            "required": ["public", "public_fields", "seo_optimized"]
+        },
+        "permission_level": {"type": "string"},
+        "list": {
+            "type": "object",
+            "properties": {
+                "id": {"type": "string"},
+                "name": {"type": "string"},
+                "access": {"type": "boolean"}
+            },
+            "required": ["id", "name", "access"]
+        },
+        "project": {
+            "type": "object",
+            "properties": {
+                "id": {"type": "string"},
+                "name": {"type": "string"},
+                "hidden": {"type": "boolean"},
+                "access": {"type": "boolean"}
+            },
+            "required": ["id", "name", "hidden", "access"]
+        },
+        "folder": {
+            "type": "object",
+            "properties": {
+                "id": {"type": "string"},
+                "name": {"type": "string"},
+                "hidden": {"type": "boolean"},
+                "access": {"type": "boolean"}
+            },
+            "required": ["id", "name", "hidden", "access"]
+        },
+        "space": {
+            "type": "object",
+            "properties": {
+                "id": {"type": "string"}
+            },
+            "required": ["id"]
+        }
+    },
+    "required": ["id"]
+}
+'''
+
+def schemaInputStream = new ByteArrayInputStream(schemaText.getBytes(StandardCharsets.UTF_8))
+def schemaFactory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V7)
+def schema = schemaFactory.getSchema(schemaInputStream)
+
+// Validate JSON Response against schema
+Set&lt;ValidationMessage> validationMessages = schema.validate(jsonNode)
+if (!validationMessages.isEmpty()) {
+    validationMessages.each { message ->
+        log.error("Validation Error: ${message.message}")
+    }
+    assert false : "JSON Schema Validation Failed"
+} else {
+    log.info("JSON Schema Validation Passed")
+}
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="Transfer 'task_id'" id="47f14b26-b6ce-48a4-b99e-49a1487a245a"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>id</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>POST_Task</con:sourceStep><con:sourcePath>$['id']</con:sourcePath><con:targetType>task_id</con:targetType><con:targetStep>#Project#</con:targetStep><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:properties><con:property><con:name>space_id</con:name><con:value>90152579910</con:value></con:property></con:properties></con:testCase><con:testCase id="cec2e455-7e2d-4db1-add9-cf7ba6525b1a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Operate by Space Tags TestCase" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="GET_EmptySpaceTags" id="d9b0b2db-92bd-4cf6-8c41-bf88bc9ec69a"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/space/${#Project#space_id}/tag" methodName="Get Space Tags" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GET_EmptySpaceTags" id="f22f91be-b146-4a51-923f-1cdc52a053c7" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/space/90152581133/tag</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="71b8a251-3e7f-4c6d-9e12-8186f3baae1d" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="0edfc1c1-1d7e-4d16-961b-bdb6ffac4007" name="Validate Empty List of Space Tags"><con:configuration><scriptText>def jsonText = messageExchange.getResponseContent()
+def json = new groovy.json.JsonSlurper().parseText(jsonText)
+
+assert json.tags instanceof List &amp;&amp; json.tags.size() == 0</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Save data for create in suite properties" id="3f577692-b674-4271-a897-0a01c75cdf41"><con:settings/><con:config><script>import java.util.Random
+
+String generateRandomString(int length) {
+    def allowedChars = ('a'..'z').toList()
+    def random = new Random()
+    return (1..length).collect { allowedChars[random.nextInt(allowedChars.size())] }.join()
+}
+
+String randomString = generateRandomString(5)
+println "Generated Random String: ${randomString}"
+testRunner.testCase.testSuite.setPropertyValue("tagName", randomString)
+testRunner.testCase.testSuite.setPropertyValue("tagColor", "#000000")</script></con:config></con:testStep><con:testStep type="restrequest" name="POST_SpaceTag" id="2fcb707e-5204-4a1a-b610-d38ad3ff3e12"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/space/${#Project#space_id}/tag" methodName="Create Space Tag" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="POST_SpaceTag" id="18e85123-120d-4c25-9f8d-7a6d86fd3534" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request>{
+  "tag": {
+    "name": "${#TestSuite#tagName}",
+    "tag_fg": "${#TestSuite#tagColor}",
+    "tag_bg": "${#TestSuite#tagColor}"
+  }
+}</con:request><con:originalUri>https://api.clickup.com/api/v2/space/90152581309/tag</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="12fead60-7bca-4aeb-8d22-250bafecc45b" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="0c753721-649c-49e8-b642-fb8b5770613e" name="Validate Empty Response"><con:configuration><scriptText>assert messageExchange.getResponseContent() == "{}"</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="GET_SpaceTags_after_creation" id="10575387-6a3e-4598-957b-0e7507fbb18a"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/space/${#Project#space_id}/tag" methodName="Get Space Tags" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GET_SpaceTags_after_creation" id="f22f91be-b146-4a51-923f-1cdc52a053c7" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/space//tag</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="d25482a3-9d9d-40f7-9cf1-3de13d46306c" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="641c0fef-484d-489d-81f6-6c5d93fdb731" name="Validate List of Space Tags after Creation"><con:configuration><scriptText>import com.eviware.soapui.support.GroovyUtils
+
+def testSuite = context.testCase.testSuite
+def tagName = testSuite.getPropertyValue("tagName")
+def tagColor = testSuite.getPropertyValue("tagColor")
+
+def jsonText = messageExchange.getResponseContent()
+def json = new groovy.json.JsonSlurper().parseText(jsonText)
+
+assert json.tags instanceof List &amp;&amp; json.tags.size() == 1
+assert json.tags[0].name == tagName
+assert json.tags[0].tag_fg == tagColor
+assert json.tags[0].tag_bg == tagColor</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Save 'tag_name' in project properties" id="508264ac-aef6-4e9e-97ca-a4934d2710d5"><con:settings/><con:config><script>context.testCase.testSuite.project.setPropertyValue("tag_name", testRunner.testCase.testSuite.getPropertyValue("tagName"))
+</script></con:config></con:testStep><con:testStep type="groovy" name="Save data for update in suite properties" id="a3c78989-143d-4c50-8cfd-5610f5932cb7"><con:settings/><con:config><script>testRunner.testCase.testSuite.setPropertyValue("updated_tagName", "updated")
+testRunner.testCase.testSuite.setPropertyValue("updated_tagColor", "#ffffff")</script></con:config></con:testStep><con:testStep type="restrequest" name="PUT_SpaceTag" id="3f0a83ef-2965-4aeb-bcad-3562142f5708"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/space/${#Project#space_id}/tag/${#Project#tag_name}" methodName="Edit Space Tag" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="PUT_SpaceTag" id="51ca667a-c0c8-481c-9a28-a7c3dd697856" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request>{
+  "tag": {
+    "name": "${#TestSuite#updated_tagName}",
+    "tag_fg": "${#TestSuite#updated_tagColor}",
+    "tag_bg": "${#TestSuite#updated_tagColor}"
+  }
+}</con:request><con:originalUri>https://api.clickup.com/api/v2/space/90152581818/tag/YqrZLsnCkE</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="db3e7239-1fff-430b-a7c3-58bafc916f22" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="51b4b0df-b8fa-42d0-94e2-0c15e41faf99" name="Validate Empty Response"><con:configuration><scriptText>assert messageExchange.getResponseContent() == "{}"</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="GET_SpaceTags_after_updating" id="bed3487c-a730-4266-b446-c4e5f691226a"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/space/${#Project#space_id}/tag" methodName="Get Space Tags" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GET_SpaceTags_after_updating" id="f22f91be-b146-4a51-923f-1cdc52a053c7" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/space//tag</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="0e9442a8-cc5c-462f-8912-a29671da3897" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="c29f40e0-0ed9-43a2-891a-b4bbecb74114" name="Validate List of Space Tags after Updating"><con:configuration><scriptText>import com.eviware.soapui.support.GroovyUtils
+
+def testSuite = context.testCase.testSuite
+def updatedTagName = testSuite.getPropertyValue("updated_tagName")
+def updatedTagColor = testSuite.getPropertyValue("updated_tagColor")
+
+def jsonText = messageExchange.getResponseContent()
+def json = new groovy.json.JsonSlurper().parseText(jsonText)
+
+assert json.tags instanceof List &amp;&amp; json.tags.size() == 1
+assert json.tags[0].name == updatedTagName
+assert json.tags[0].tag_fg == updatedTagColor
+assert json.tags[0].tag_bg == updatedTagColor</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="POST_SpaceTagToTask" id="bb1708a6-e6df-4819-b797-41d8e1c42711"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/task/${#Project#task_id}/tag/${#Project#tag_name}" methodName="Add Space Tag to Task" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="POST_SpaceTagToTask" id="1f255271-cb27-4a82-9029-319fd3f480ba" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/task/86bz8pnnn/tag/mqdbq</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="bb0fb298-aff9-4b8a-8be1-418ad4c793fd" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="8a9738e6-a729-4211-87b2-8f8019671f93" name="Validate Empty Response"><con:configuration><scriptText>assert messageExchange.getResponseContent() == "{}"</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="Authorization" value="${#Project#token}"/>
+  <con:entry key="Content-Type" value="application/json"/>
+</con:parameters><con:parameterOrder><con:entry>Authorization</con:entry><con:entry>Content-Type</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="DELETE_SpaceTagFromTask" id="27b54f24-7313-4624-b60a-446148ea04d6"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/task/${#Project#task_id}/tag/${#Project#tag_name}" methodName="Delete Space Tag from Task" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="DELETE_SpaceTagFromTask" id="8ec0ee9e-880b-4b8a-b0ec-20333a16f379" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/task/86bz8ptn0/tag/fdfcb</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="89e73777-cb50-4d80-a92e-cd8c54f4b45e" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="bf925824-e7fb-4a1b-8192-d86cc6a80820" name="Validate Empty Response"><con:configuration><scriptText>assert messageExchange.getResponseContent() == "{}"</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="Authorization" value="${#Project#token}"/>
+  <con:entry key="Content-Type" value="application/json"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="DELETE_SpaceTag" id="c60a0008-f8e8-4deb-9b91-8cbad32eb7c8"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/space/${#Project#space_id}/tag/${#Project#tag_name}" methodName="Delete Space Tag" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="DELETE_SpaceTag" id="82ff9fe2-4544-459f-bc40-59e1533ba3c2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/space/90152582238/tag/zyyrx</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="f4cf81ca-cf61-48e2-bcdc-346ae0339414" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="9722cce7-b59b-47bf-be60-8bec39f802d5" name="Validate Empty Response"><con:configuration><scriptText>assert messageExchange.getResponseContent() == "{}"</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="7f178d13-7c4a-40fe-81b2-ba73da8ce947" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Delete Pre-requests TestCase" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="DELETE_Task" id="da4f066d-73bf-426a-b6d1-30d67c7a97a9" disabled="true"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/task/${#Project#task_id}" methodName="Delete Task" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="DELETE_Task" id="569a0c2a-402b-40c2-85a4-cb00f5e27a01" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/task/86bz8m04c</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="b83e42c3-22c6-42c7-bf04-c887cf8f6a23" name="Valid HTTP Status Codes"><con:configuration><codes>204</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="Authorization" value="${#Project#token}"/>
+  <con:entry key="Content-type" value="application/json"/>
+</con:parameters><con:parameterOrder><con:entry>Authorization</con:entry><con:entry>Content-type</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="DELETE_List" id="64618f61-0485-42e3-940d-b30706ce857d" disabled="true"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/list/${#Project#list_id}" methodName="Delete List" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="DELETE_List" id="cb20748a-4c1d-4097-b56d-5a0409c3828b" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/list/901505698177</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="183adcf1-c79e-4d01-b8db-125f47854194" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="72321745-5b4c-4258-bc17-66001e207380" name="Validate Empty Response"><con:configuration><scriptText>assert messageExchange.getResponseContent() == "{}"</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="DELETE_Folder" id="e835c656-b27a-488b-85c6-af3ed4540f1d" disabled="true"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/folder/${#Project#folder_id}" methodName="Delete Folder" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="DELETE_Folder" id="dc0f8fc1-621d-41c3-afb1-d7fcbfb1cfd8" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/folder/</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="08a5765f-9e17-4f88-a443-9fa241698f12" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="724a252e-bb3e-44e8-9a29-7d2d6da820ae" name="Validate Empty Response"><con:configuration><scriptText>assert messageExchange.getResponseContent() == "{}"</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="DELETE_Space" id="1c29b9c8-9f16-4375-91b0-28fe2d42e1e5"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/space/${#Project#space_id}" methodName="Delete Space" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="DELETE_Space" id="c84f35f0-b226-4983-8f6c-4048ddd7931a" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/space/90152581212</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="27358ab3-5a3a-4911-8131-93367b0a439c" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="3db715ad-e180-41f7-a0ca-608d0907c55d" name="Validate Empty Response"><con:configuration><scriptText>assert messageExchange.getResponseContent() == "{}"</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="${#Project#token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>updated_tagName</con:name><con:value>updated</con:value></con:property><con:property><con:name>updated_tagColor</con:name><con:value>#ffffff</con:value></con:property><con:property><con:name>tagColor</con:name><con:value>#000000</con:value></con:property><con:property><con:name>spaceName</con:name><con:value>qbqhx</con:value></con:property><con:property><con:name>tagName</con:name><con:value>pgpev</con:value></con:property></con:properties></con:testSuite><con:properties><con:property><con:name>token</con:name><con:value>pk_74473614_GK9TWN8N5PK2GCAB9T3QF62NS1MQ2467</con:value></con:property><con:property><con:name>team_id</con:name><con:value>9015703641</con:value></con:property><con:property><con:name>space_id</con:name><con:value>90152589107</con:value></con:property><con:property><con:name>tag_name</con:name><con:value>pgpev</con:value></con:property><con:property><con:name>list_id</con:name><con:value>901505708496</con:value></con:property><con:property><con:name>task_id</con:name><con:value>86bz8tc92</con:value></con:property><con:property><con:name>folder_id</con:name><con:value>90153684807</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
